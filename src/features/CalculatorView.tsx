@@ -32,7 +32,7 @@ function CalculatorView(p: { calculator: Calculator }) {
         <button onClick={clear} className={[styles.button, styles.clear].join(' ')} id="clear">AC</button>
 
         <button onClick={operate} className={[styles.button, styles.operator].join(' ')} id="divide">/</button>
-        <button onClick={operate} className={[styles.button, styles.operator].join(' ')} id="multiply">X</button>
+        <button onClick={operate} className={[styles.button, styles.operator].join(' ')} id="multiply">x</button>
         <button onClick={operate} className={[styles.button, styles.operator, styles.subtract].join(' ')} id="subtract">-</button>
         <button onClick={operate} className={[styles.button, styles.operator, styles.add].join(' ')} id="add">+</button>
         <button onClick={results} className={[styles.button, styles.equal].join(' ')} id="equals">=</button>

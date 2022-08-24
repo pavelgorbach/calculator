@@ -90,7 +90,7 @@ export class Calculator {
         break
       case '/': result = left / right
         break
-      case 'X': result = left * right
+      case 'x': result = left * right
         break
       default: result = 0 
     }

@@ -5,11 +5,11 @@ import { Calculator } from "./calculatorStore"
 import styles from './CalculatorView.module.scss'
 
 function CalculatorView(p: { calculator: Calculator }) {
-  const append = (e: MouseEvent<HTMLDivElement>) => {
+  const append = (e: MouseEvent<HTMLButtonElement>) => {
     p.calculator.setOperand((e.target as HTMLElement).innerText)
   } 
 
-  const operate = (e: MouseEvent<HTMLDivElement>) => {
+  const operate = (e: MouseEvent<HTMLButtonElement>) => {
     p.calculator.setOperator((e.target as HTMLElement).innerText)
   }
 
@@ -24,34 +24,34 @@ function CalculatorView(p: { calculator: Calculator }) {
   return (
     <div className={styles.container}>
       <div className={styles.display}>
-        <div id="display">{p.calculator.display || '0'}</div>
-        <div>{p.calculator.currOperand || p.calculator.operator || '0'}</div>
+        <div className={styles.formula} id="display">{p.calculator.display || '0'}</div>
+        <div className={styles.result}>{p.calculator.currOperand || p.calculator.operator || '0'}</div>
       </div>
 
-      <div onClick={clear} className={styles.clear} id="clear">AC</div>
+      <div className={styles.buttons}>
+        <button onClick={clear} className={[styles.button, styles.clear].join(' ')} id="clear">AC</button>
 
-      <div onClick={operate} className={styles.operator} id="divide">/</div>
-      <div onClick={operate} className={styles.operator} id="multiply">X</div>
-      <div onClick={operate} className={styles.operator} id="subtract">-</div>
-      <div onClick={operate} className={styles.operator} id="add">+</div>
+        <button onClick={operate} className={[styles.button, styles.operator].join(' ')} id="divide">/</button>
+        <button onClick={operate} className={[styles.button, styles.operator].join(' ')} id="multiply">X</button>
+        <button onClick={operate} className={[styles.button, styles.operator, styles.subtract].join(' ')} id="subtract">-</button>
+        <button onClick={operate} className={[styles.button, styles.operator, styles.add].join(' ')} id="add">+</button>
+        <button onClick={results} className={[styles.button, styles.equal].join(' ')} id="equals">=</button>
 
-      <div onClick={results} className={styles.equal} id="equals">=</div>
+        <button onClick={append} className={styles.button} id="seven">7</button>
+        <button onClick={append} className={styles.button} id="eight">8</button>
+        <button onClick={append} className={styles.button} id="nine">9</button>
 
-      <div onClick={append} className={styles.decimal} id="decimal">.</div>
+        <button onClick={append} className={styles.button} id="four">4</button>
+        <button onClick={append} className={styles.button} id="five">5</button>
+        <button onClick={append} className={styles.button} id="six">6</button>
 
-      <div onClick={append} id="seven">7</div>
-      <div onClick={append} id="eight">8</div>
-      <div onClick={append} id="nine">9</div>
+        <button onClick={append} className={styles.button} id="one">1</button>
+        <button onClick={append} className={styles.button} id="two">2</button>
+        <button onClick={append} className={styles.button} id="three">3</button>
 
-      <div onClick={append} id="four">4</div>
-      <div onClick={append} id="five">5</div>
-      <div onClick={append} id="six">6</div>
-
-      <div onClick={append} id="one">1</div>
-      <div onClick={append} id="two">2</div>
-      <div onClick={append} id="three">3</div>
-
-      <div onClick={append} id="zero">0</div>
+        <button onClick={append} className={[styles.button, styles.zero].join(' ')} id="zero">0</button>
+        <button onClick={append} className={[styles.button, styles.decimal].join(' ')} id="decimal">.</button>
+      </div>
     </div>
   )
 }

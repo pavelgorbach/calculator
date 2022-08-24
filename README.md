@@ -2,7 +2,7 @@
 
 This project was bootstrapped with Create React App
 
-[Project DEMO](https://clclator.web.app/).
+[Project DEMO](https://clclator.firebaseapp.com/).
 
 ## Description
 

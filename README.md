@@ -2,11 +2,12 @@
 
 This project was bootstrapped with Create React App
 
-[DEMO](https://clclator.firebaseapp.com/).
+[DEMO](https://clclator.firebaseapp.com/)
 
 ## Description
 
-Look at the description on [freeCodeCamp]()
+[Project Description](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator)
+
 ## Available Scripts
 
 In the project directory, you can run:
